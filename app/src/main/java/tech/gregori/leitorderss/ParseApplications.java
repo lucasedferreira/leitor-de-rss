@@ -1,4 +1,4 @@
- package tech.gregori.leitorderss;
+package tech.gregori.leitorderss;
 
 import android.util.Log;
 
@@ -42,6 +42,10 @@ public class ParseApplications {
                 String tag = pullParser.getName();
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
+<<<<<<< HEAD
+=======
+                        Log.d(TAG, "parse: Começando a tag: " + tag);
+>>>>>>> 19f50fbaa9c05f396003e6be4f22e7c4f0577b3e
                         if ("entry".equalsIgnoreCase(tag)) {
                             inEntry = true;
                             entry = new FeedEntry();
@@ -51,6 +55,10 @@ public class ParseApplications {
                         textValue = pullParser.getText();
                         break;
                     case XmlPullParser.END_TAG:
+<<<<<<< HEAD
+=======
+                        Log.d(TAG, "parse: Terminando a tag: " + tag);
+>>>>>>> 19f50fbaa9c05f396003e6be4f22e7c4f0577b3e
                         if (inEntry) {
                             if ("entry".equalsIgnoreCase(tag)) { // </entry> ??
                                 // terminou a "entry", então armnazenar o FeedEntry no arraylist
@@ -72,6 +80,15 @@ public class ParseApplications {
                 }
                 eventType = pullParser.next();
             }
+<<<<<<< HEAD
+=======
+
+            for (FeedEntry feedEntry : applications) {
+                Log.d(TAG, "******************************");
+                Log.d(TAG, feedEntry.toString());
+            }
+
+>>>>>>> 19f50fbaa9c05f396003e6be4f22e7c4f0577b3e
         } catch (Exception ex) {
             Log.e(TAG, "parse: Erro ao fazer parse: " + ex.getMessage());
             status = false;
